@@ -1,0 +1,46 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+.container {
+  width: 800px;
+  margin: 20px auto; }
+
+.add-box {
+  width: 100%; }
+  .add-box .text {
+    width: 100%;
+    padding: 10px; }
+    .add-box .text h2 {
+      text-align: center; }
+  .add-box .input-box {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    .add-box .input-box .input-time {
+      padding: 5px 10px;
+      margin-bottom: 20px; }
+    .add-box .input-box .output-time {
+      padding: 5px 10px; }
+    .add-box .input-box .add-btn {
+      font-size: 16px;
+      display: block;
+      margin-top: 8px;
+      padding: 5px 10px; }
+
+.data-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px; }
+  .data-box table th, .data-box table td {
+    text-align: center;
+    padding: 5px 15px;
+    border: 1px solid #313131; }
+
+/*# sourceMappingURL=style.css.map */
