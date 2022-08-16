@@ -26,19 +26,20 @@ add_button_element.addEventListener('click' , storeOnLocalStorage)
 function storeOnLocalStorage () {
     let  post_intime_value , post_outtime_value
     let d = new Date()
-    let year = d.getFullYear() , month = d.getMonth() , day = d.getDay()
-    let sub_date = year + '/' + month + '/' + day
+    let year = d.getFullYear() , month = d.getMonth() , day = d.getDay() , hours = d.getHours() , minutes = d.getMinutes() , seconds = d.getSeconds()
+    let sub_date = year + '/' + month + '/' + day + ' ' + hours + ':' + minutes + ':' + seconds ;
 
     post_intime_value = input_time_element.value ? input_time_element.value : ""
     post_outtime_value = output_time_element.value ? output_time_element.value : ""
-
-    in_times.unshift(post_intime_value)
-    out_times.unshift(post_outtime_value)
-    sub_dates.unshift(sub_date)
+    
+    for(let i = 0 ; i<=1000 ; i++){
+        in_times.unshift(post_intime_value)
+        out_times.unshift(post_outtime_value)
+        sub_dates.unshift(sub_date)
+    }
 
         let in_text = ""
         in_times.forEach(function (item, index) {
-            for (let i = 0 ; i <= 1000 ; i++){
                 in_text += `
                     <tr>
                     <td>${item}</td>
@@ -46,7 +47,6 @@ function storeOnLocalStorage () {
                     <td>${sub_dates[index]}</td>
                     </tr>
                     `
-                 }
         })
 
         tbody_element.innerHTML = in_text
