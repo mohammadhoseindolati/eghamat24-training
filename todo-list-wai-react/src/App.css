@@ -1,0 +1,8 @@
+.container {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 15px;
+    background-color: crimson;
+}
