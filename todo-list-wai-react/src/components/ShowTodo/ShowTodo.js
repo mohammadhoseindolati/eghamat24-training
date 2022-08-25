@@ -3,6 +3,12 @@ import { useState } from 'react'
 
 const ShowTodo = ()=> {
 
+    const checkbox_element = document.getElementById('btn-showcheckbox')
+
+    let [selectDate , setSelectDate] = useState("") ;
+
+    let [checkedBox , setCheckedBox] = useState(false) ;
+
     let allTodo = localStorage.getItem('todos') !== null ? JSON.parse(localStorage.getItem('todos')) : []
 
     let notDone = allTodo.filter( (value) =>  value.status === false && value.date === selectDate  )
@@ -12,12 +18,10 @@ const ShowTodo = ()=> {
     const changeStatus = (id) => {
             
         }
+
     
-    let [selectDate , setSelectDate] = useState("") ;
 
-    const checkbox_element = document.getElementById('btn-showcheckbox')
-
-    let [checkedBox , setCheckedBox] = useState(true) ;
+    
 
     
 
@@ -28,11 +32,11 @@ const ShowTodo = ()=> {
             <div className="filter">
                 <div className="checkbox-box">
                     <span>Check To Show Done</span>
-                    <input onClick={()=> setCheckedBox(!checkbox_element.checked) } id='btn-showcheckbox' type="checkbox" className='checkbox-input' />
+                    <input onClick={()=> setCheckedBox(!checkedBox) } id='btn-showcheckbox' type="checkbox" className='checkbox-input' />
                 </div>
                 <div className="select-date">
                     <input type="date" onChange={(e)=> setSelectDate(e.target.value) }  />
-                    <button  className='btn-show'>Show</button>
+                    {/* <button  className='btn-show'>Show</button> */}
                 </div>
             </div>
 
@@ -56,7 +60,6 @@ const ShowTodo = ()=> {
                                         <td><input type="button" onClick={()=> changeStatus(value.id)}  value="Not Done" /></td>
                                         </tr>
                                         )
-
                             })
                         }
 
