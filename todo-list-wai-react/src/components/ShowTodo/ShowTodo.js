@@ -16,7 +16,13 @@ const ShowTodo = ()=> {
     let doneTodo = allTodo.filter( (value) => value.status === true && value.date === selectDate  )
 
     const changeStatus = (id) => {
-            
+
+            for(let i = 0 ; i <= allTodo.length ; i++ ) {
+                if(allTodo[i].id === id){
+                    allTodo[i].status = true ;
+                    localStorage.setItem('todos' , JSON.stringify(allTodo))
+                }
+            }
         }
 
     
@@ -36,7 +42,6 @@ const ShowTodo = ()=> {
                 </div>
                 <div className="select-date">
                     <input type="date" onChange={(e)=> setSelectDate(e.target.value) }  />
-                    {/* <button  className='btn-show'>Show</button> */}
                 </div>
             </div>
 
