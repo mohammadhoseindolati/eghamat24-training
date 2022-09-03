@@ -1,0 +1,12 @@
+.input-box {
+    width: 100%;
+}
+.btn-box {
+    width: 100%;
+}
+.main {
+    height: 100vh;
+}
+.main li {
+    list-style: none;
+}
