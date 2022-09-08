@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('status') ;
             $table->text('title')->nullable();
-            $table->unsignedBigInteger('title_length')->nullable();
+//            $table->unsignedBigInteger('title_length')->nullable();
             $table->text('meta_description')->nullable();
             $table->string('has_canonical');
-            $table->string('html_size');
+//            $table->string('html_size')->nullable();
             $table->foreignId('site_id')->constrained();
 
             $table->timestamps();
