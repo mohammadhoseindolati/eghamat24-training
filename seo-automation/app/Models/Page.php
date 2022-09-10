@@ -21,16 +21,19 @@ class Page extends Model
             'site_id' => $site_id
         ]);
 
-        Image::insert([
-            collect($info['images'])->map(fn($src)=>['src'=>$src, 'page_id'=>$page_id->id])->all()
-        ]);
 
-        Video::insert([
+        Image::insert(
+            collect($info['images'])
+                ->map(fn($src)=>['src'=>$src, 'page_id'=>$page_id->id])
+                ->all()
+        );
+
+        Video::insert(
             collect($info['videos'])->map(fn($src)=>['src'=>$src, 'page_id'=>$page_id->id])->all()
-        ]);
+        );
 
-        Link::insert([
+        Link::insert(
             collect($info['internal-urls'])->map(fn($href)=>['href'=>$href, 'page_id'=>$page_id->id])->all()
-        ]);
+        );
     }
 }
